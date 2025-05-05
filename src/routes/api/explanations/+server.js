@@ -10,45 +10,49 @@ export const GET = async ({ fetch }) => {
     const completion = await client.beta.chat.completions.parse({
         model: "deepseek-chat",
         messages: [
-            {
-                role: "system",
-                content: `
-                You're a med school professor, your task is to generate explanations from university lectures into a set of questions, answer in the following json structure, map each explanations to the question index in the questions array
-                [
-                    {
-                        index, // this is the question index in the input array
-                        explanation, // this is the required explanation
-                    }
-                ]
-
-                For example: here's a question, it's question of index 4 (the 5th item in the questions array)
-                {
-                    "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي \nعدا",
-                    "answers": {
-                        "a": " موضع المستقبل",
-                        "b": "شكل جوالنه في الدم )حر أو مرتبط(",
-                        "c": " ارتباطه بالمستقبل عكوس او غير عكوس.",
-                        "d": " مدة نصف عمره بالدم"
-                    },
-                    "correctAnswer": "d"
+          {
+            role: "system",
+            content: `
+      You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures. Each explanation should justify the correct answer, referencing relevant lecture content.
+      
+      Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format:
+      
+      [    
+        {
+            "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي \nعدا",
+            "answers": {
+                "a": {
+                    "content": " موضع المستقبل",
+                    "correct": false
                 },
-                here's an explanation to that question
-                {
-                    index: 4,
-                    explanation: "التركيب الكيميائي للهرمون يحدد خصائصه مثل موضع المستقبل (أ)، وشكل وجوده في الدم (ب)، ونوع ارتباطه بالمستقبل (عكوس أو غير عكوس) (ج). لكن مدة نصف العمر في الدم (د) لا تعتمد بشكل رئيسي على التركيب الكيميائي للهرمون، بل على عوامل خارجية مثل معدل الأيض وإخراج الهرمون من الجسم، لذلك هي الإجابة الصحيحة."
+                "b": {
+                    "content": "شكل جوالنه في الدم )حر أو مرتبط(",
+                    "correct": false
+                },
+                "c": {
+                    "content": " ارتباطه بالمستقبل عكوس او غير عكوس.",
+                    "correct": false
+                },
+                "d": {
+                    "content": " مدة نصف عمره بالدم",
+                    "correct": true
                 }
-
-                You will repond in Arabic, each explanation need to specify why the answer is correct, relying on the lectures as the source, keep the explanations brief and consice.
-
-                The questions: ${questions}
-
-                The lectures:
-                ${lectures}
-                `
-            }
+            },
+            "explanation": ""
+        },
+        ...
+      ]
+      
+      The lectures:
+      ${lectures}
+      
+      The questions:
+      ${questions}
+            `
+          }
         ],
-        response_format: { 'type': 'json_object' }
-    });
+        response_format: { type: 'json_object' }
+      });      
 
     console.log(completion);
 
