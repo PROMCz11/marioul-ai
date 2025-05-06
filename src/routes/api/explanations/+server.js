@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import { SECRET_DEEPSEEK_API_KEY } from "$env/static/private";
 import { json } from "@sveltejs/kit";
-import { lectures } from "$lib/lectures";
+import { lectures } from "$lib/lectures/lectures-[3, 12, 13]";
 import { questions } from "$lib/questions";
 
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
@@ -13,15 +13,15 @@ export const GET = async ({ fetch }) => {
           {
             role: "system",
             content: `
-      You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures. Each explanation should justify the correct answer, referencing relevant lecture content, while also explaining why other options are wrong, form each explanation in one paragraph block in this order:
+      You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures. Each explanation should justify the correct answer, referencing relevant lecture content, while also explaining why other options are wrong, form each explanation in one paragraph block in this logical order (without numbers):
       
       1. Explain why the correct answer is correct
       2. Elaborate on relevant information about the correct answer
       3. Explain why other options are incorrect
 
-      Keep your explanations short and concise.
+      Keep your explanations short and concise, and make sure to not change the questions.
       
-      Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format:
+      Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format (do not use this particular example in your response):
       
       [    
         {
@@ -53,7 +53,7 @@ export const GET = async ({ fetch }) => {
       ${lectures}
       
       The questions:
-      ${questions}
+      ${questions.slice(17, 22)}
             `
           }
         ],
@@ -64,5 +64,5 @@ export const GET = async ({ fetch }) => {
 
     const data = JSON.parse(completion.choices[0].message.content);
 
-    return json({ sucess: true, data, completion });
+    return json({ success: true, data, completion });
 }

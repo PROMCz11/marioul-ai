@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import { SECRET_DEEPSEEK_API_KEY } from "$env/static/private";
 import { json } from "@sveltejs/kit";
-import { lectures } from "$lib/lectures";
+import { lectures } from "$lib/lectures/lectures-[1, 2, 7]";
 
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
 
@@ -48,5 +48,5 @@ export const GET = async ({ fetch }) => {
 
     const data = JSON.parse(completion.choices[0].message.content);
 
-    return json({ sucess: true, data, completion });
+    return json({ success: true, data, completion });
 }
