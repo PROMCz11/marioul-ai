@@ -13,7 +13,13 @@ export const GET = async ({ fetch }) => {
           {
             role: "system",
             content: `
-      You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures. Each explanation should justify the correct answer, referencing relevant lecture content.
+      You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures. Each explanation should justify the correct answer, referencing relevant lecture content, while also explaining why other options are wrong, form each explanation in one paragraph block in this order:
+      
+      1. Explain why the correct answer is correct
+      2. Elaborate on relevant information about the correct answer
+      3. Explain why other options are incorrect
+
+      Keep your explanations short and concise.
       
       Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format:
       

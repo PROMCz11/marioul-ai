@@ -1,0 +1,244 @@
+[
+    {
+        "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي عدا",
+        "answers": {
+            "a": {
+                "content": "موضع المستقبل",
+                "correct": false
+            },
+            "b": {
+                "content": "شكل جوالنه في الدم )حر أو مرتبط(",
+                "correct": false
+            },
+            "c": {
+                "content": "ارتباطه بالمستقبل عكوس او غير عكوس.",
+                "correct": false
+            },
+            "d": {
+                "content": "مدة نصف عمره بالدم",
+                "correct": true
+            }
+        },
+        "explanation": "التركيب الكيميائي للهرمون يؤثر في موضع المستقبل، وشكله في الدم (حر أو مرتبط)، وطبيعة ارتباطه بالمستقبل (عكوس أو غير عكوس). ومع ذلك، فإن مدة نصف عمر الهرمون في الدم تتأثر بعوامل أخرى مثل معدل تصفيته من الجسم وليس بالضرورة بتركيبه الكيميائي."
+    },
+    {
+        "body": "أي من الهرمونات التالية يفرز من النخامى الخلفية؟",
+        "answers": {
+            "a": {
+                "content": "ADH",
+                "correct": true
+            },
+            "b": {
+                "content": "ACTH",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "LH",
+                "correct": false
+            }
+        },
+        "explanation": "هرمون ADH (الهرمون المضاد لإدرار البول) يفرز من النخامى الخلفية، بينما الهرمونات الأخرى مثل ACTH وFSH وLH تفرز من النخامى الأمامية."
+    },
+    {
+        "body": "أي من العوامل التالية يحفز إفراز البرولاكتين؟",
+        "answers": {
+            "a": {
+                "content": "الدوبامين",
+                "correct": false
+            },
+            "b": {
+                "content": "TRH",
+                "correct": true
+            },
+            "c": {
+                "content": "السوماتوستاتين",
+                "correct": false
+            },
+            "d": {
+                "content": "GHIH",
+                "correct": false
+            }
+        },
+        "explanation": "TRH (هرمون تحرير الثيروتروبين) هو العامل الوطائي الذي يحفز إفراز البرولاكتين، بينما الدوبامين يثبط إفرازه."
+    },
+    {
+        "body": "أي من الهرمونات التالية له دور في تحفيز إنتاج الحليب من الثدي؟",
+        "answers": {
+            "a": {
+                "content": "البرولاكتين",
+                "correct": true
+            },
+            "b": {
+                "content": "الأوكسيتوسين",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "LH",
+                "correct": false
+            }
+        },
+        "explanation": "البرولاكتين هو الهرمون المسؤول عن تحفيز إنتاج الحليب من الثدي، بينما الأوكسيتوسين يساعد في إفراز الحليب."
+    },
+    {
+        "body": "أي من الهرمونات التالية يفرز من الوطاء؟",
+        "answers": {
+            "a": {
+                "content": "CRH",
+                "correct": true
+            },
+            "b": {
+                "content": "ACTH",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "LH",
+                "correct": false
+            }
+        },
+        "explanation": "CRH (هرمون تحرير الكورتيكوتروبين) يفرز من الوطاء، بينما الهرمونات الأخرى مثل ACTH وFSH وLH تفرز من النخامى الأمامية."
+    },
+    {
+        "body": "أي من الهرمونات التالية له دور في تحفيز نمو المشاشات؟",
+        "answers": {
+            "a": {
+                "content": "GH",
+                "correct": true
+            },
+            "b": {
+                "content": "البرولاكتين",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "LH",
+                "correct": false
+            }
+        },
+        "explanation": "هرمون النمو (GH) له دور أساسي في تحفيز نمو المشاشات عبر تحفيز إنتاج عوامل النمو مثل IGF-1 من الكبد."
+    },
+    {
+        "body": "أي من الهرمونات التالية يفرز بشكل نبضي؟",
+        "answers": {
+            "a": {
+                "content": "ACTH",
+                "correct": true
+            },
+            "b": {
+                "content": "البرولاكتين",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "LH",
+                "correct": false
+            }
+        },
+        "explanation": "ACTH يفرز بشكل نبضي كل 15 دقيقة وسطياً، بينما الهرمونات الأخرى قد تفرز بشكل مستمر أو دوري حسب الظروف الفسيولوجية."
+    },
+    {
+        "body": "أي من الهرمونات التالية له دور في تحفيز إفراز الهرمونات الدرقية؟",
+        "answers": {
+            "a": {
+                "content": "TSH",
+                "correct": true
+            },
+            "b": {
+                "content": "البرولاكتين",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "LH",
+                "correct": false
+            }
+        },
+        "explanation": "TSH (هرمون تحفيز الدرقية) هو الهرمون الذي يحفز إفراز الهرمونات الدرقية من الغدة الدرقية."
+    },
+    {
+        "body": "أي من الهرمونات التالية له دور في تحفيز إنتاج التستوستيرون من خلايا الليدغ؟",
+        "answers": {
+            "a": {
+                "content": "LH",
+                "correct": true
+            },
+            "b": {
+                "content": "البرولاكتين",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "ACTH",
+                "correct": false
+            }
+        },
+        "explanation": "LH (هرمون اللوتين) هو الهرمون الذي يحفز إنتاج التستوستيرون من خلايا الليدغ في الخصيتين."
+    },
+    {
+        "body": "أي من الهرمونات التالية له دور في تحفيز نضج الجريبات في المبيض؟",
+        "answers": {
+            "a": {
+                "content": "FSH",
+                "correct": true
+            },
+            "b": {
+                "content": "البرولاكتين",
+                "correct": false
+            },
+            "c": {
+                "content": "LH",
+                "correct": false
+            },
+            "d": {
+                "content": "ACTH",
+                "correct": false
+            }
+        },
+        "explanation": "FSH (هرمون تحفيز الجريبات) هو الهرمون الذي يحفز نضج الجريبات في المبيض."
+    },
+    {
+        "body": "أي من الهرمونات التالية له دور في تحفيز إباضة البويضة؟",
+        "answers": {
+            "a": {
+                "content": "LH",
+                "correct": true
+            },
+            "b": {
+                "content": "البرولاكتين",
+                "correct": false
+            },
+            "c": {
+                "content": "FSH",
+                "correct": false
+            },
+            "d": {
+                "content": "ACTH",
+                "correct": false
+            }
+        },
+        "explanation": "LH (هرمون اللوتين) هو الهرمون الذي يحفز إباضة البويضة من الجريب الناضج في المبيض."
+    }
+]

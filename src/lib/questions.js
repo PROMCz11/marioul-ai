@@ -886,7 +886,7 @@
 
 
 
-
+// First 11 for lectures [1, 2, 7]
 export const questions = [
     {
         "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي \nعدا",
