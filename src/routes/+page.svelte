@@ -11,6 +11,8 @@
     //     })
     // }
 
+    let isSaving = false;
+
     const generateExplanations = () => {
         if(!lectureList.find(l => l.checked) || !questionStart == "" || !questionStart == null || !questionStart == undefined
          || !questionEnd || !prompt) {
@@ -118,7 +120,11 @@ Respond in Arabic using the following JSON structure, fill in the empty explanat
             <textarea bind:value={prompt} cols="60" rows="10" placeholder="Enter a prompt"></textarea>
         </div>
         <div>
+            {#if isSaving}
+            <p>Loading ...</p>
+            {:else}
             <button on:click={generateExplanations}>Generate explanations ✨</button>
+            {/if}
         </div>
     </div>
 
