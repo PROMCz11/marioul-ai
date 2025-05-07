@@ -1,7 +1,6 @@
 import OpenAI from "openai";
 import { SECRET_DEEPSEEK_API_KEY } from "$env/static/private";
 import { json } from "@sveltejs/kit";
-import { lectures } from "$lib/lectures/lectures-[1, 2, 7]";
 
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
 
