@@ -13,6 +13,7 @@ import { lecture11 } from "$lib/lectures/lecture-11";
 import { lecture12 } from "$lib/lectures/lecture-12";
 import { lecture13 } from "$lib/lectures/lecture-13";
 import { lecture15 } from "$lib/lectures/lecture-15";
+import { supabase } from "$lib/supabaseClient";
 
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
 
@@ -71,11 +72,15 @@ export const POST = async ({ fetch, request }) => {
         response_format: { type: 'json_object' }
       });      
 
-    // console.log(completion);
-
     const data = JSON.parse(completion.choices[0].message.content);
 
-    return json({ success: true, data, completion });
+    const { data: promptID, error } = await supabase
+    .from('marioul_prompts')
+    .insert([{ completion, prompt: { lecturesSpec, questionsSpec, instructions: prompt } }])
+    .select('promptID')
+    .single();
+
+    return json({ success: true, data, completion, promptID });
 }
 
 const compileLectures = specification => {

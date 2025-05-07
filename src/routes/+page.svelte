@@ -70,7 +70,7 @@
         { lec: 15, checked: false },
     ]
 
-    let prompt = `You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures. Each explanation should justify the correct answer, referencing relevant lecture content, while also explaining why other options are wrong, form each explanation in one paragraph block in this logical order (without numbers):
+    let prompt = `You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures, without changing the questions. Each explanation should justify the correct answer, referencing relevant lecture content, while also explaining why other options are wrong, form each explanation in one paragraph block in this logical order (without numbers):
       
 1. Explain why the correct answer is correct
 2. Elaborate on relevant information about the correct answer
@@ -78,7 +78,7 @@
 
 Keep your explanations short and concise, and make sure to not change the questions.
 
-Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format (do not use this particular example in your response):`;
+Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format (do not use the following example in your response):`;
 
 
     const downloadAsJSON = (variable, filename = 'data') => {
