@@ -14,7 +14,9 @@
     let isSaving = false;
 
     const generateExplanations = () => {
-        if(!lectureList.find(l => l.checked) || !questionStart == "" || !questionStart == null || !questionStart == undefined
+        isSaving = true;
+        
+        if(!lectureList.find(l => l.checked) || questionStart == "" || questionStart == null || questionStart == undefined
          || !questionEnd || !prompt) {
             alert("Missing data")
             return;
@@ -38,10 +40,12 @@
         })
         .then(res => res.json())
         .then(json => {
+            isSaving = false;
             console.log(json);
             questionStart = null;
             questionEnd = null;
             lectureList.forEach(l => l.checked = false);
+            lectureList = lectureList;
             explanationsResult = json.data.questions;
         })
     }
