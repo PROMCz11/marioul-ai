@@ -15,10 +15,10 @@
 
     const generateExplanations = () => {
         isSaving = true;
-        
-        if(!lectureList.find(l => l.checked) || questionStart == "" || questionStart == null || questionStart == undefined
-         || !questionEnd || !prompt) {
-            alert("Missing data")
+
+        if(!lectureList.find(l => l.checked) || questionStart === "" || questionStart === null || questionStart === undefined
+         || !questionEnd || !prompt || questionStart < 0 || questionEnd > 40 || questionStart > questionEnd) {
+            alert("Invalid data");
             return;
         }
 
@@ -53,8 +53,8 @@
     let questionsResult = [];
     let explanationsResult = [];
 
-    let questionStart = "";
-    let questionEnd = "";
+    let questionStart = null;
+    let questionEnd = null;
 
     let lectureList = [
         { lec: 1, checked: false },
@@ -110,6 +110,8 @@ Respond in Arabic using the following JSON structure, fill in the empty explanat
         <div>
             <p class="bold">Select question range (start from 0 not 1, and the end is exclusive)</p>
             <p>For example if I needed questions 1 to 11, I would say 0, 11</p>
+            <p>Start can only be 0 and above</p>
+            <p>End can only be 40 and below</p>
             <input bind:value={questionStart} type="number" placeholder="Question start">
             <input bind:value={questionEnd} type="number" placeholder="Question end">
         </div>
