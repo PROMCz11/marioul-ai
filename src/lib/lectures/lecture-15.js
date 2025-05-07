@@ -1,4 +1,4 @@
-export const lectures = `
+export const lecture15 = `
 استقالب الكالسيوم و فيتامين د
 Calcium and Vitamin D 
 metabolism

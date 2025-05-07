@@ -1,4 +1,4 @@
-export const lectures = `
+export const lecture11 = `
 جارات الدرق، الدريقات
 Parathyroides
 • تنشأ الدريقات جنينياً من الجيوب البلعومية

@@ -135,3 +135,24 @@ button:active {
     border-color: #a1a1a1;
     color: black;
 }
+
+textarea {
+    padding: .2rem .4rem;
+    border: 1px solid #a1a1a166;
+    color: #a1a1a1;
+    background-color: black;
+    border-radius: 0;
+    font-family: monospace;
+    resize: vertical;
+}
+
+textarea:hover {
+    color: white;
+    border-color: white;
+}
+
+textarea:focus {
+    outline: none;
+    color: white;
+    border-color: white;
+}
