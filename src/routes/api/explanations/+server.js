@@ -27,50 +27,31 @@ export const POST = async ({ fetch, request }) => {
 
   console.log(questionsSpec, lecturesSpec);
 
+  const messages = [
+    {
+      role: "system",
+      content: `
+      ${prompt}
+      `
+    },
+    {
+      role: "user",
+      content: `The Lectures: 
+      ${lectures}`
+    },
+    {
+      role: "user",
+      content: `The questions: 
+      ${JSON.stringify(questions.slice(start, end))}`
+    }
+  ]
+
     const completion = await client.beta.chat.completions.parse({
         model: "deepseek-chat",
-        messages: [
-          {
-            role: "system",
-            content: `
-            ${prompt}
-      
-      [    
-        {
-            "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي \nعدا",
-            "answers": {
-                "a": {
-                    "content": " موضع المستقبل",
-                    "correct": false
-                },
-                "b": {
-                    "content": "شكل جوالنه في الدم )حر أو مرتبط(",
-                    "correct": false
-                },
-                "c": {
-                    "content": " ارتباطه بالمستقبل عكوس او غير عكوس.",
-                    "correct": false
-                },
-                "d": {
-                    "content": " مدة نصف عمره بالدم",
-                    "correct": true
-                }
-            },
-            "explanation": ""
-        },
-        ...
-      ]
-      
-      The lectures:
-      ${lectures}
-      
-      The questions:
-      ${questions.slice(start, end)}
-            `
-          }
-        ],
-        response_format: { type: 'json_object' }
-      });      
+        messages,
+        response_format: { type: 'json_object' },
+        max_tokens: 8192
+      });
 
     const data = JSON.parse(completion.choices[0].message.content);
 
@@ -80,7 +61,7 @@ export const POST = async ({ fetch, request }) => {
     .select('promptID')
     .single();
 
-    return json({ success: true, data, completion, promptID });
+    return json({ success: true, data, completion, promptID, messages });
 }
 
 const compileLectures = specification => {

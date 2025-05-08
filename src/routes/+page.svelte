@@ -46,6 +46,10 @@
             questionEnd = null;
             lectureList.forEach(l => l.checked = false);
             lectureList = lectureList;
+            if(json.data.error) {
+                console.log("ERROR");
+                return;
+            }
             explanationsResult = json.data.questions;
         })
     }
@@ -70,15 +74,79 @@
         { lec: 15, checked: false },
     ]
 
-    let prompt = `You're a medical school professor. Your task is to generate concise explanations for multiple-choice questions based on the provided lectures, without changing the questions. Each explanation should justify the correct answer, referencing relevant lecture content, while also explaining why other options are wrong, form each explanation in one paragraph block in this logical order (without numbers):
-      
-1. Explain why the correct answer is correct
-2. Elaborate on relevant information about the correct answer
-3. Explain why other options are incorrect
+    let prompt = `
+        You're a med school professor. the user will provide a questions or a set of multiple choice questions for you to analyse, the user will also provide a set of lectures as reference, then for for each question you should generate an explanation following this framework on order:
+        
+        1. Explain why the correct answer is correct
+        2. Elaborate on relevant information about the correct answer, from the lectures
+        3. Explain why other options are incorrect
 
-Keep your explanations short and concise, and make sure to not change the questions.
+        Things to do:
+        1. Keep the explanation brief and concise
+        2. Generate explanations based on information from lectures which will be provided to you
+        3. Respond in Arabic
+        4. Always return an array even if only one question was provided
 
-Respond in Arabic using the following JSON structure, fill in the empty explanation property of each question, here's an example question format (do not use the following example in your response):`;
+        Things not to do:
+        1. Do not include the number of a step when following the explanation framework
+        2. Do not change the question body, or answers
+
+        Follow this JSON structure as shown in the example:
+
+        Example input:
+        [
+            {
+                "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي عدا",
+                "answers": {
+                    "a": {
+                        "content": "موضع المستقبل",
+                        "correct": false
+                    },
+                    "b": {
+                        "content": "شكل جوالنه في الدم (حر أو مرتبط)",
+                        "correct": false
+                    },
+                    "c": {
+                        "content": "ارتباطه بالمستقبل عكوس او غير عكوس.",
+                        "correct": false
+                    },
+                    "d": {
+                        "content": "مدة نصف عمره بالدم",
+                        "correct": true
+                    }
+                },
+                "explanation": ""
+            },
+            ...
+        ]
+
+        Example output:
+        [
+            {
+                "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي عدا",
+                "answers": {
+                    "a": {
+                        "content": "موضع المستقبل",
+                        "correct": false
+                    },
+                    "b": {
+                        "content": "شكل جوالنه في الدم (حر أو مرتبط)",
+                        "correct": false
+                    },
+                    "c": {
+                        "content": "ارتباطه بالمستقبل عكوس او غير عكوس.",
+                        "correct": false
+                    },
+                    "d": {
+                        "content": "مدة نصف عمره بالدم",
+                        "correct": true
+                    }
+                },
+                "explanation": "التركيب الكيميائي للهرمون يؤثر في موضع المستقبل، وشكله في الدم، وطبيعة ارتباطه بالمستقبل، لكنه لا يؤثر مباشرة في مدة نصف عمره بالدم، والتي تتحدد بعوامل أخرى مثل معدل التصفية الكلوية والاستقلاب الكبدي. مدة نصف العمر تعتمد على عوامل خارجية مثل الارتباط بالبروتينات الناقلة ومعدل التخلص من الهرمون، وليس على التركيب الكيميائي الداخلي للهرمون نفسه."
+            },
+            ...
+        ]
+    `;
 
 
     const downloadAsJSON = (variable, filename = 'data') => {
