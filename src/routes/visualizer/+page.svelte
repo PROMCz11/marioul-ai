@@ -11,6 +11,7 @@
         <button on:click={() => {
             if(!questionsInput) {
                 alert("الرجاء إدخال أسئلة");
+                return;
             }
 
             try {
