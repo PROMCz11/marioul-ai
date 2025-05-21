@@ -1,0 +1,838 @@
+[
+    {
+        "body": "تمثل -34ppm1",
+        "answers": {
+            "a": {
+                "content": "1كغ/ماء",
+                "correct": false
+            },
+            "b": {
+                "content": "1غ/لتر ماء",
+                "correct": false
+            },
+            "c": {
+                "content": "1ملغ/مل ماء",
+                "correct": false
+            },
+            "d": {
+                "content": "1ملغ/لتر ماء",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "تطبق السادات فوق النخر:",
+        "answers": {
+            "a": {
+                "content": "على السن الخالي من النخر سريريا",
+                "correct": false
+            },
+            "b": {
+                "content": "يمكن استخدام الليزر قبل السادات",
+                "correct": false
+            },
+            "c": {
+                "content": "خفض نسبة النخر %٢٥",
+                "correct": true
+            },
+            "d": {
+                "content": "ختم السطوح رغم وجود جراثيم بالوهاد",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "الخاطئة عن السادات",
+        "answers": {
+            "a": {
+                "content": "تعطي السادات وقاية من نخور الوهاد والميازيب ٦٧ %خالل سبع سنوات",
+                "correct": true
+            },
+            "b": {
+                "content": "يفضل النوع المحرر للفلور",
+                "correct": false
+            },
+            "c": {
+                "content": "تؤمن وقاية افضل للوهاد و الميازيب من المالصقة",
+                "correct": false
+            },
+            "d": {
+                "content": "نسبة انخفاض النخر نهاية السنة األولى من التطبيق %",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "نسبة ثبات السادات :",
+        "answers": {
+            "a": {
+                "content": "%48",
+                "correct": false
+            },
+            "b": {
+                "content": "%58",
+                "correct": false
+            },
+            "c": {
+                "content": "%68",
+                "correct": false
+            },
+            "d": {
+                "content": "%88",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "السادات تثبت على السطح المينائي غالبا",
+        "answers": {
+            "a": {
+                "content": "تثبيت ميكانيكي في الوهاد العميقة",
+                "correct": false
+            },
+            "b": {
+                "content": "ارتباط كيميائي للسادة مع الميناء",
+                "correct": false
+            },
+            "c": {
+                "content": "التصاق مباشر للسادة",
+                "correct": false
+            },
+            "d": {
+                "content": "تثبيت ميكانيكي للسادة ضمن الميناء المخرشة",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "الميدازوالم (ماعدا )",
+        "answers": {
+            "a": {
+                "content": "مركن ومسكن ومزيل قلق",
+                "correct": false
+            },
+            "b": {
+                "content": "يحدث فقدان ذاكرة مؤقتة",
+                "correct": false
+            },
+            "c": {
+                "content": "ذو هجمة سريعة وعمر النصف قصير",
+                "correct": false
+            },
+            "d": {
+                "content": "ال يوجد عبارة خاطئة",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "إذا وضعت أسطوانة غاز اآلزوت بدل أسطوانة غاز األوكسجين",
+        "answers": {
+            "a": {
+                "content": "حدوث تركين عميق للمريض",
+                "correct": false
+            },
+            "b": {
+                "content": "توقف الجهاز عن العمل",
+                "correct": false
+            },
+            "c": {
+                "content": "كل ما سبق صحيح",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ما سبق خطأ",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "المركن العميق هو:",
+        "answers": {
+            "a": {
+                "content": "ديازيبام",
+                "correct": false
+            },
+            "b": {
+                "content": "ميدازوالم",
+                "correct": false
+            },
+            "c": {
+                "content": "هيدروكسيزين",
+                "correct": false
+            },
+            "d": {
+                "content": "ديميرول",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "المناسب للتركين االسستنشاقي )الخاطئة:(",
+        "answers": {
+            "a": {
+                "content": "الشعور بالدفء",
+                "correct": false
+            },
+            "b": {
+                "content": "الشعور بالبرد",
+                "correct": true
+            },
+            "c": {
+                "content": "الشعور بخفة باليدين",
+                "correct": false
+            },
+            "d": {
+                "content": "ثقل الجسم",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "السبب األهم للتقيؤ:",
+        "answers": {
+            "a": {
+                "content": "عدم تناول الطعام قبل جلسة التركين",
+                "correct": false
+            },
+            "b": {
+                "content": "تناول الطعام قبل جلسة التركين",
+                "correct": false
+            },
+            "c": {
+                "content": "تغير مستمر مفاجئ في مستوى أكسيد اآلزوت",
+                "correct": true
+            },
+            "d": {
+                "content": "زيادة جرعة أوكسيد اآلزوت",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "ال يستطب التركين االستنشاقي في:",
+        "answers": {
+            "a": {
+                "content": "الحمل",
+                "correct": false
+            },
+            "b": {
+                "content": "الربو",
+                "correct": false
+            },
+            "c": {
+                "content": "الفشل الكلوي",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ما سبق خطأ",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "أوكسيد اآلزوت :",
+        "answers": {
+            "a": {
+                "content": "يستخدم كسواغ مع الغاز",
+                "correct": true
+            },
+            "b": {
+                "content": "مفعوله للتخدير جيد",
+                "correct": false
+            },
+            "c": {
+                "content": "يؤثر على الجملة العصبية المحيطية",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ما سبق صحيح",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "من مزايا التركين (ماعدا)",
+        "answers": {
+            "a": {
+                "content": "يستخدم في جميع الحاالت",
+                "correct": true
+            },
+            "b": {
+                "content": "بدء التركين أسر ع من التحضير الدوائي والفموي والشرجي والعضلي وأبطأ من الوريدي بقليل",
+                "correct": false
+            },
+            "c": {
+                "content": "السرعة في الوصول إلى ذروة التأثير السريري كما في التسريب الوريدي",
+                "correct": false
+            },
+            "d": {
+                "content": "إمكانية تغيير عمق التركين بين لحظة وأخرى",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "من تأثيرات أوكسيد اآلزوت (ماعدا)",
+        "answers": {
+            "a": {
+                "content": "يؤثر في التقيؤ",
+                "correct": true
+            },
+            "b": {
+                "content": "يثبط إحساسات اللمس والسمع واأللم",
+                "correct": false
+            },
+            "c": {
+                "content": "غير مخرش للظهارة التنفسية",
+                "correct": false
+            },
+            "d": {
+                "content": "يمر عبر المشيمة بسهولة",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "يستخدم جهاز oximiter pulse",
+        "answers": {
+            "a": {
+                "content": "للسيطرة على التثبيط النفسي الذي يحدثه الميدازوالم",
+                "correct": false
+            },
+            "b": {
+                "content": "لقياس نقص األكسجة عند المريض",
+                "correct": false
+            },
+            "c": {
+                "content": "لقياس العالمات الحيوية أثناء التركين",
+                "correct": false
+            },
+            "d": {
+                "content": "لقياس معدل النبض واألكسجة",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "االلتحام المالطي:",
+        "answers": {
+            "a": {
+                "content": "اليعتبر اضطرابا ً تطوريا",
+                "correct": true
+            },
+            "b": {
+                "content": "سببه اضطرابات وعائية عصبية",
+                "correct": false
+            },
+            "c": {
+                "content": "التحام سنين متطورين",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ماسبق صحيح",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "سن داخل سن :اختر الخاطئة",
+        "answers": {
+            "a": {
+                "content": "اندالق الظهارة المينائية الداخلية نحو الداخل",
+                "correct": false
+            },
+            "b": {
+                "content": "يكون اللب متصال ً مباشرة مع الفم",
+                "correct": false
+            },
+            "c": {
+                "content": "لها شكل حدبة TALON",
+                "correct": true
+            },
+            "d": {
+                "content": "كل ماسبق صحيح",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "فيما يخص مظهر سن داخل سن (الخاطئة(",
+        "answers": {
+            "a": {
+                "content": "اندالق الظهارة المينائية الداخلية",
+                "correct": false
+            },
+            "b": {
+                "content": "الرباعيات العلوية هي األكثر تكرارا",
+                "correct": false
+            },
+            "c": {
+                "content": "يكون اللب متصال ً مباشرة مع وسط الفم",
+                "correct": false
+            },
+            "d": {
+                "content": "يظهر على حابة TALON",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "من أسباب االضطرابات السنية ماعدا:",
+        "answers": {
+            "a": {
+                "content": "وراثية",
+                "correct": false
+            },
+            "b": {
+                "content": "انفتاق الصفيحة السنية",
+                "correct": false
+            },
+            "c": {
+                "content": "جرثومية",
+                "correct": true
+            },
+            "d": {
+                "content": "جهازية",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "االنزالق الحديبي السني:",
+        "answers": {
+            "a": {
+                "content": "يتضمن النسيج ميناء فقط",
+                "correct": false
+            },
+            "b": {
+                "content": "ميناء وعاج",
+                "correct": false
+            },
+            "c": {
+                "content": "على السطوح اللسانية لألسنان األمامية والخلفية",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ما سبق خطأ",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "تشاهد أسنان الشبح GHOSTفي سياق:",
+        "answers": {
+            "a": {
+                "content": "الثدن المينائي العاجي",
+                "correct": true
+            },
+            "b": {
+                "content": "نقص تصنع العاج",
+                "correct": false
+            },
+            "c": {
+                "content": "الرض المقاوم للقيتامين",
+                "correct": false
+            },
+            "d": {
+                "content": "نقص الفوسفاتانية",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "تظهر قواطع هوتشنسون في سياق اإلصابة ب :",
+        "answers": {
+            "a": {
+                "content": "الحصبة األلمانية",
+                "correct": false
+            },
+            "b": {
+                "content": "نقص التغذية وخاصة فيتامينD",
+                "correct": false
+            },
+            "c": {
+                "content": "االنتان باالفرنجي ما قبل الوالدة",
+                "correct": true
+            },
+            "d": {
+                "content": "الشلل الدماغي",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "إن مصطلح االلتحام المالطي هو:",
+        "answers": {
+            "a": {
+                "content": "Cementofusion",
+                "correct": false
+            },
+            "b": {
+                "content": "Fusion",
+                "correct": false
+            },
+            "c": {
+                "content": "Gemenation",
+                "correct": false
+            },
+            "d": {
+                "content": "Concrescense",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "النط األكثر شيوعا ً من سوء تصنع الوريقة الخارجية هو:",
+        "answers": {
+            "a": {
+                "content": "المفرز للعرق",
+                "correct": false
+            },
+            "b": {
+                "content": "انحباس أو قلة العرق",
+                "correct": true
+            },
+            "c": {
+                "content": "هو هدو حنكي",
+                "correct": false
+            },
+            "d": {
+                "content": "روبنسون",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "Dens evaginatus -39",
+        "answers": {
+            "a": {
+                "content": "اندالق الظهارة المينائية الخارجية",
+                "correct": false
+            },
+            "b": {
+                "content": "تدعى بالتضاعف",
+                "correct": false
+            },
+            "c": {
+                "content": "نسبتها 1-4%",
+                "correct": true
+            },
+            "d": {
+                "content": "تشاهد على األسنان األمامية فقط",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "يظهر اللب على شكل لهب الشمعة في سياق:",
+        "answers": {
+            "a": {
+                "content": "سوء تنسج مينائي",
+                "correct": false
+            },
+            "b": {
+                "content": "سوء تصنع الميناء",
+                "correct": false
+            },
+            "c": {
+                "content": "نقص تصنع العاج",
+                "correct": true
+            },
+            "d": {
+                "content": "نقص تنسج موضعي",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "سبب فشل التخدير ماعدا: :",
+        "answers": {
+            "a": {
+                "content": "انتهاء صالحية المخدر",
+                "correct": false
+            },
+            "b": {
+                "content": "تشوهات تشريحية كالتعصيب الزائد",
+                "correct": false
+            },
+            "c": {
+                "content": "عدم وضع المخدر بتماس العصب",
+                "correct": false
+            },
+            "d": {
+                "content": "منطقة انتان الحقن فيها أدى الرتفاع ph",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "مكان ثقبة الفك السفلي عند طفل بعمر 7سنوات:",
+        "answers": {
+            "a": {
+                "content": "عند مستوى االطباق",
+                "correct": true
+            },
+            "b": {
+                "content": "تحت مستوى االطباق",
+                "correct": false
+            },
+            "c": {
+                "content": "فوق مستوى االطباق",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ما سبق خطأ",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "لتخدير طفل في أول زيارة له، أهم االجراءات:",
+        "answers": {
+            "a": {
+                "content": "تحضير المريض",
+                "correct": true
+            },
+            "b": {
+                "content": "أن تكون األدوات مقبولة",
+                "correct": false
+            },
+            "c": {
+                "content": "المساعدة مدّربة بشكل جيد",
+                "correct": false
+            },
+            "d": {
+                "content": "أن نبقي االهل بغرفة االنتظار",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "كل مايلي صحيح عن المخدر السطحي البنزوكائين ماعدا:",
+        "answers": {
+            "a": {
+                "content": "يبدأ زمن التأثير بعد 30 ثانية",
+                "correct": false
+            },
+            "b": {
+                "content": "زمن التأثير أطول من المخدرات السطحية األخرى",
+                "correct": false
+            },
+            "c": {
+                "content": "يطبق بدون تجفيف",
+                "correct": true
+            },
+            "d": {
+                "content": "يوجد على شكل هالم أو سائل",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "ال نطبق الليدوكائين %10 تحت الخمس سنوات ألنه:",
+        "answers": {
+            "a": {
+                "content": "مخرش",
+                "correct": false
+            },
+            "b": {
+                "content": "طعمه كريه",
+                "correct": false
+            },
+            "c": {
+                "content": "يسبب التهاب لثة شديد مكان التطبيق",
+                "correct": false
+            },
+            "d": {
+                "content": "ذو تركيز عالي وامتصاص سريع",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "مكان ثقبة الفك السفلي في األسنان المؤقتة تكون ) المخالفة ( :",
+        "answers": {
+            "a": {
+                "content": "عند مستوى االطباق",
+                "correct": false
+            },
+            "b": {
+                "content": "أخفض من مستوى االطباق",
+                "correct": true
+            },
+            "c": {
+                "content": "فوق مستوى االطباق ب 1ملم",
+                "correct": false
+            },
+            "d": {
+                "content": "تحدد حسب كل حالة على حدا",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "االجابة الصحيحة عند تخدير األرحاء العلوية المؤقتة:",
+        "answers": {
+            "a": {
+                "content": "ذرى األرحاء العلوية المؤقتة تكون عند عمق الطية المخاطية الدهليزية",
+                "correct": true
+            },
+            "b": {
+                "content": "ذرى األرحاء العلوية المؤقتة تكون على بعد 5-2ملم من عمق الطية المخاطية الدهليزية",
+                "correct": false
+            },
+            "c": {
+                "content": "في الحفر المحافظة يجب التخدير حنكي",
+                "correct": false
+            },
+            "d": {
+                "content": "A+C",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "العبارة غير الصحيحة عن طريقة وضع اليد فوق الفم",
+        "answers": {
+            "a": {
+                "content": "أخذ موافقة األهل",
+                "correct": false
+            },
+            "b": {
+                "content": "شر ح الطريقة بشكل مناسب",
+                "correct": false
+            },
+            "c": {
+                "content": "خروج األهل لقاعة االنتظار",
+                "correct": false
+            },
+            "d": {
+                "content": "ال يجرى في الزيارة االولى للعيادة السنية",
+                "correct": true
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "المعايير األساسية المستخدمة في عملية بتر اللب باستثناء :",
+        "answers": {
+            "a": {
+                "content": "ال تثير رد فعل مناعي",
+                "correct": false
+            },
+            "b": {
+                "content": "ال تتسرب من القناة اللبية",
+                "correct": false
+            },
+            "c": {
+                "content": "ال تثبط الفعاليات االستقالبية و االمتصاصية",
+                "correct": true
+            },
+            "d": {
+                "content": "ال تسبب تشكل طفرات",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "العامل األهم في التخدير الموضعي للطفل",
+        "answers": {
+            "a": {
+                "content": "تطبيق مخدر سطحي",
+                "correct": false
+            },
+            "b": {
+                "content": "تحضير الطفل نفسيا",
+                "correct": true
+            },
+            "c": {
+                "content": "الحقن ببطء",
+                "correct": false
+            },
+            "d": {
+                "content": "كل ما سبق صحيح",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "المتالزمة المرافقة معها غياب األسنان :",
+        "answers": {
+            "a": {
+                "content": "سوء التعظم الترقوي القحفي",
+                "correct": false
+            },
+            "b": {
+                "content": "آبرت",
+                "correct": false
+            },
+            "c": {
+                "content": "سوء تصنع الوريقة الخارجية",
+                "correct": true
+            },
+            "d": {
+                "content": "غاردنير",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    },
+    {
+        "body": "لون أسطوانات الغاز ألوكسيد النتروز :",
+        "answers": {
+            "a": {
+                "content": "أزرق",
+                "correct": true
+            },
+            "b": {
+                "content": "أبيض",
+                "correct": false
+            },
+            "c": {
+                "content": "أزرق و أبيض",
+                "correct": false
+            },
+            "d": {
+                "content": "كل دولة لها تصنيف خاص بها",
+                "correct": false
+            }
+        },
+        "explanation": ""
+    }
+]
