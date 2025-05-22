@@ -23,6 +23,10 @@
         }}>عرض</button>
     </div>
     {:else}
+    <button class="clear" on:click={() => {
+        questionsInput = null;
+        questions = [];
+    }}>Clear</button>
     {#each questions as question, index}
     <div class="question">
         <h3>{index + 1}. {question.body}</h3>
@@ -57,5 +61,11 @@
 
     .question .correct {
         color: green;
+    }
+
+    .clear {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
     }
 </style>

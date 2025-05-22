@@ -17,15 +17,20 @@
 </script>
 
 <main>
+    <textarea bind:value={system} cols="60" rows="17" placeholder="System prompt"></textarea>
+    <textarea bind:value={user} cols="60" rows="17" placeholder="User prompt"></textarea>
     <div>
-        <textarea bind:value={system} cols="60" rows="10" placeholder="System prompt"></textarea>
-        <textarea bind:value={user} cols="60" rows="10" placeholder="User prompt"></textarea>
+        <button on:click={generate}>Generate ✨</button>
     </div>
-    <button on:click={generate}>Generate ✨</button>
 </main>
 
 <style>
     main {
         padding: 1rem;
+        max-width: 700px;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 </style>

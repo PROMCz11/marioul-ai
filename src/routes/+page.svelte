@@ -75,7 +75,7 @@
     ]
 
     let prompt = `
-        You're a med school professor. the user will provide a questions or a set of multiple choice questions for you to analyse, the user will also provide a set of lectures as reference, then for for each question you should generate an explanation following this framework on order:
+        You're a med school professor. the user will provide a set of multiple choice questions for you to analyse, the user will also provide a set of lectures as reference, then for for each question you should generate an explanation following this framework on order:
         
         1. Explain why the correct answer is correct
         2. Elaborate on relevant information about the correct answer, from the lectures
