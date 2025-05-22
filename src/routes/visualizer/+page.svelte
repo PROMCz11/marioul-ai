@@ -2,6 +2,9 @@
     let questions = [];
 
     let questionsInput = "";
+
+    import explainedBank from "$lib/dental/dental-bank-explained.json";
+    questions = explainedBank;
 </script>
 
 <main class="fs-300" dir="rtl">
