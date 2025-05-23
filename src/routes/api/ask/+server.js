@@ -35,7 +35,8 @@ export const POST = async ({ fetch, request }) => {
       3. Quote information from the lecture which you have based your answer on.
       4. Elaborate on the quote in a way that relates to the question.
 
-      If you cannot find information in the lectures to base your answer on, then say this at the start of your answer "هذا الجواب من خارج المحاضرات وقد يكون غير دقيق", then continue to answer based on your own general knowledge regardless of the context.
+      If you cannot find information in the lectures to base your answer on, then generate an answer based on your general knowledge regardless of the lectures, then add this exact text snippet to the start of your answer "هذا الجواب من خارج المحاضرات وقد يكون غير دقيق: ".
+      
       Things to do:
       1. Answer from the given context which is the set of lectures.
       2. Answer in Arabic.
@@ -44,6 +45,7 @@ export const POST = async ({ fetch, request }) => {
       Things not to do:
       1. Answer with information outside of the context.
       2. Include the number of a step when you're following the answering framework.
+      3. Change the provided text snippet ("هذا الجواب من خارج المحاضرات وقد يكون غير دقيق: ") when you need to generate an answer from your general knowledge
 
       Format your answer in JSON like this:
       {
