@@ -5,8 +5,6 @@ import { supabase } from "$lib/supabaseClient";
 
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
 
-let lectures = ``;
-
 export const POST = async ({ fetch, request }) => {
   const { prompt } = await request.json();
 

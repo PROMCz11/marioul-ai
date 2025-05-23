@@ -1,15 +1,5 @@
 <script>
     import { questions } from "$lib/questions";
-    import "../global.css";
-    // const generateQuestions = () => {
-    //     questionsResult = [];
-    //     fetch("./api/questions")
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         console.log(json);
-    //         questionsResult = json.completion;
-    //     })
-    // }
 
     let isSaving = false;
 
