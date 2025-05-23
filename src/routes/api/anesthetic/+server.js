@@ -34,7 +34,7 @@ export const POST = async ({ fetch, request }) => {
 
       Format your answer in JSON like this:
       {
-        answer: "this is the generated answer",
+        answer: "this is the generated answer in plain text",
         source: "this is the unedited block of text from the lectures, on which you have based your answer, if it doesn't exist, leave this as an empty string"
       }
 
