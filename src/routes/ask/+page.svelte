@@ -4,7 +4,7 @@
     const generateAnswer = () => {
         isSaving = true;
 
-        if(!lectureList.find(l => l.checked || !question)) {
+        if(!lectureList.find(l => l.checked) || question) {
             alert("Invalid data");
             return;
         }

@@ -35,7 +35,7 @@ export const POST = async ({ fetch, request }) => {
       3. Quote information from the lecture which you have based your answer on.
       4. Elaborate on the quote in a way that relates to the question.
 
-      If you cannot find information in the lectures to base your answer on, then say this before you answer "هذا الجواب قد يكون غير دقيق", then continue to answer based on your own knowledge regardless of the conttext, without hallucinating or inventing incorrect information.
+      If you cannot find information in the lectures to base your answer on, then say this before you answer "هذا الجواب قد يكون غير دقيق", then continue to answer based on your own knowledge regardless of the context, without hallucinating or inventing incorrect information.
 
       Things to do:
       1. Answer from the given context which is the set of lectures.
