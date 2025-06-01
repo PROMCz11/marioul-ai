@@ -8,9 +8,9 @@ const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECR
 import lectures from "./first-6.json";
 
 export const POST = async ({ fetch, request }) => {
-  const { question } = await request.json();
+  let { messages } = await request.json();
 
-  const messages = [
+  messages = [
     {
       role: "system",
       content: `
@@ -45,27 +45,24 @@ export const POST = async ({ fetch, request }) => {
       ${lectures.content}
       `
     },
-    {
-      role: "user",
-      content: `
-      ${question}`
-    },
+    ...messages
   ]
 
     const completion = await client.beta.chat.completions.parse({
         model: "deepseek-chat",
         messages,
         response_format: { type: 'json_object' },
-        max_tokens: 8192
+        max_tokens: 8192,
     });
 
     const data = JSON.parse(completion.choices[0].message.content);
+    const message = completion.choices[0].message;
 
     const { data: promptID, error } = await supabase
     .from('marioul_prompts')
-    .insert([{ completion, prompt: { question } }])
+    .insert([{ completion, prompt: { messages: messages.slice(1) } }])
     .select('promptID')
     .single();
 
-    return json({ success: true, data, completion, promptID, messages });
+    return json({ status: true, data, completion, promptID, message });
 }

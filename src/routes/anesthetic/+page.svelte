@@ -9,12 +9,16 @@
             return;
         }
 
-
-        generatedAnswer = null;
+        messages = [...messages, {
+            role: 'user',
+            content: question
+        }]
+        
+        question = "";
 
         fetch("../api/anesthetic", {
             method: "POST",
-            body: JSON.stringify({ question })
+            body: JSON.stringify({ messages })
         })
         .then(res => res.json())
         .then(json => {
@@ -24,64 +28,103 @@
                 console.log("ERROR");
                 return;
             }
-            generatedAnswer = json.data;
+
+            if(!json.status) {
+                return;
+            }
+
+            messages = [...messages, json.message];
         })
     }
 
-    let generatedAnswer = null;
-
     let question = "";
+
+    let messages = [];
 </script>
 
-<main>
-    <div class="settings">
-        <div>
-            <p class="bold">Ask your question</p>
-            <textarea dir="rtl" bind:value={question} cols="60" rows="10" placeholder="Enter a question"></textarea>
-        </div>
-        <div>
-            {#if isSaving}
-            <p>Loading ... (this will take a few seconds)</p>
-            {:else}
-            <button on:click={generateAnswer}>Generate explanations ✨</button>
+<main class="fs-300" dir="rtl">
+    <p class="bold fs-400">محادثة في مادة التخدير</p>
+
+    {#if messages.length}
+    <div class="messages">
+        {#each messages as message}
+            {#if message.role === 'assistant'}
+                {#if !message.parsed}
+                <div class="assistant">
+                    <div>
+                        <p class="bold">الجواب:</p>
+                        <p>{JSON.parse(message.content).answer || "لا يوجد جواب"}</p>
+                    </div>
+                    <div>
+                        <p class="bold">المصدر من المحاضرة:</p>
+                        <p>{JSON.parse(message.content).source || "لا يوجد مصدر"}</p>
+                    </div>
+                </div>
+                {/if}
+            {:else if message.role === 'user'}
+            <div class="user">
+                <p class="bold">{message.content}</p>
+            </div>
             {/if}
-        </div>
+        {/each}
     </div>
-
-    
-
-    {#if generatedAnswer}
-        <div class="questions-explained fs-400" dir="rtl">
-            <div>
-                <p class="bold">الجواب:</p>
-                <p>{generatedAnswer.answer || "لا يوجد جواب"}</p>
-            </div>
-            <div>
-                <p class="bold">المصدر من المحاضرة:</p>
-                <p>{generatedAnswer.source || "لا يوجد مصدر"}</p>
-            </div>
-        </div>
     {/if}
+
+    <div class="message-input">
+        {#if isSaving}
+        <p class="thinking">جار التفكير بجواب ...</p>
+        {:else} 
+        <input bind:value={question} type="text" placeholder="اكتب سؤالك ..." />
+        <button on:click={generateAnswer}>إرسال</button>
+        {/if}
+    </div>
 </main>
 
 <style>
     main {
         padding: 1rem;
-    }
-
-    .settings {
-        max-width: 500px;
+        max-width: 700px;
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: 1.5rem;
         margin-inline: auto;
     }
 
-    .questions-explained {
+    .assistant {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        max-width: 700px;
-        margin-inline: auto;
+    }
+
+    .message-input {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .message-input > input {
+        flex: 1;
+    }
+
+    .thinking {
+        animation: thinking 500ms linear alternate infinite;
+    }
+
+    @keyframes thinking {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: .5;
+        }
+    }
+
+    .messages > div {
+        border: 1px solid #a1a1a166;
+        padding: 1rem;
+    }
+
+    .messages .user {
+        background-color: #1a1a1a;
     }
 </style>
