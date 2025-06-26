@@ -136,6 +136,11 @@ button:active {
     color: black;
 }
 
+button {
+    padding: .2rem .8rem;
+    text-align: center;
+}
+
 textarea {
     padding: .2rem .4rem;
     border: 1px solid #a1a1a166;
