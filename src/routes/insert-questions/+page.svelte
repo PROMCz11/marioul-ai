@@ -7,6 +7,8 @@
     let isGenerating = false;
     let isInserting = false;
 
+    let systemPassword;
+
     const generate = async () => {
         if(
             !courseID ||
@@ -16,6 +18,11 @@
             !round
         ) {
             alert("Invalid data");
+            return;
+        }
+
+        if(!systemPassword) {
+            alert("Enter a valid system password");
             return;
         }
 
@@ -35,7 +42,8 @@
                     lectureNumber,
                     rawQuestions,
                     bankID,
-                    round
+                    round,
+                    systemPassword
                 })
             })
             
@@ -61,12 +69,17 @@
             return;
         }
 
+        if(!systemPassword) {
+            alert("Enter a valid system password");
+            return;
+        }
+
         try {
             isInserting = true;
             const res = await fetch('/api/insert-questions/insert', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ generatedQuestions })
+                body: JSON.stringify({ generatedQuestions, systemPassword })
             })
             
             const json = await res.json();
@@ -105,6 +118,10 @@
     <div>
         <p>Round</p>
         <input bind:value={round} type="text" placeholder="Write something ...">
+    </div>
+    <div>
+        <p>System Password</p>
+        <input bind:value={systemPassword} type="text" placeholder="Enter a valid password ...">
     </div>
     {#if isGenerating}
     <p class="loading">Generating ...</p>

@@ -1,12 +1,16 @@
 import OpenAI from "openai";
-import { SECRET_DEEPSEEK_API_KEY } from "$env/static/private";
+import { SECRET_DEEPSEEK_API_KEY, SECRET_SYSTEM_PASSWORD } from "$env/static/private";
 import { json } from "@sveltejs/kit";
 import { supabase } from "$lib/supabaseClient";
 
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
 
 export const POST = async ({ fetch, request }) => {
-    const { courseID, lectureNumber, rawQuestions, bankID, round } = await request.json();
+    const { courseID, lectureNumber, rawQuestions, bankID, round, systemPassword } = await request.json();
+
+    if(systemPassword !== SECRET_SYSTEM_PASSWORD) {
+        return json({ status: false, message: "Unauthorized" });
+    }
 
     const { data: lectureContent, error: lectureError } = await supabase
         .from('hawi_lecture')
