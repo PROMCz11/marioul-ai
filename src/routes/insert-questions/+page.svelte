@@ -2,6 +2,8 @@
     let courseID, lectureNumber;
     let rawQuestions;
 
+    let professorName;
+
     let bankID, round;
 
     let isGenerating = false;
@@ -43,7 +45,8 @@
                     rawQuestions,
                     bankID,
                     round,
-                    systemPassword
+                    systemPassword,
+                    professorName
                 })
             })
             
@@ -107,6 +110,13 @@
     <div>
         <p>Lecture Number</p>
         <input bind:value={lectureNumber} type="number" placeholder="Write something ...">
+    </div>
+    <div>
+        <p>Professor name *Optional but has to be exact</p>
+        <p>Follow this format:</p>
+        <p>الدكتور الفلان الفلاني</p>
+        <p>الدكتورة الفلانة الفلانية</p>
+        <input bind:value={professorName} type="text" placeholder="Write something ...">
     </div>
 
     <textarea bind:value={rawQuestions} cols="60" rows="17" placeholder="Write something ..."></textarea>

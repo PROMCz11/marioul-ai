@@ -6,18 +6,36 @@ import { supabase } from "$lib/supabaseClient";
 const client = new OpenAI({ baseURL: "https://api.deepseek.com/v1", apiKey: SECRET_DEEPSEEK_API_KEY });
 
 export const POST = async ({ fetch, request }) => {
-    const { courseID, lectureNumber, rawQuestions, bankID, round, systemPassword } = await request.json();
+    const { courseID, lectureNumber, professorName, rawQuestions, bankID, round, systemPassword } = await request.json();
 
     if(systemPassword !== SECRET_SYSTEM_PASSWORD) {
         return json({ status: false, message: "Unauthorized" });
     }
 
-    const { data: lectureContent, error: lectureError } = await supabase
-        .from('hawi_lecture')
-        .select('lectureID, content')
-        .eq('courseID', courseID)
-        .eq('number', lectureNumber)
-        .single();
+    let lectureContent, lectureError;
+
+    if(professorName) {
+        const { data, error } = await supabase
+            .from('hawi_lecture')
+            .select('lectureID, content')
+            .eq('courseID', courseID)
+            .eq('number', lectureNumber)
+            .eq('professor', professorName)
+            .single();
+
+        lectureContent = data;
+        lectureError = error;
+    } else {
+        const { data, error } = await supabase
+            .from('hawi_lecture')
+            .select('lectureID, content')
+            .eq('courseID', courseID)
+            .eq('number', lectureNumber)
+            .single();
+
+        lectureContent = data;
+        lectureError = error;
+    }
 
     if(lectureError || !lectureContent) {
         return json({ status: false, message: lectureError?.message || "Something went wrong." });
