@@ -79,24 +79,22 @@ export const POST = async ({ fetch, request }) => {
   2. generate an explanation following this framework on order:
         
         1. Explain why the correct answer is correct
-        2. Elaborate on relevant information about the correct answer, from the lectures
-        3. Explain why other options are incorrect
+        2. Elaborate on relevant information about the correct answers with your knowledge and experience
 
         Things to do:
         1. Keep the explanation brief and concise
-        2. Generate explanations based on information from lectures which will be provided to you
+        2. Generate explanations based on information with your medical knowledge with 50% new information in the explanation
         3. Respond in Arabic
         4. Always return an array even if only one question was provided
 
         Things not to do:
         1. Do not include the number of a step when following the explanation framework
         2. Do not change the question body, or answers
-        3. Never change which answer is the correct answer, keep the answers exactly as they are in the same order
 
         Follow this JSON structure as shown in the example:
 
 {
-                        "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي \nعدا",
+                        "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي عدا",
                         "answers": [
                             {
                                 "content": " موضع المستقبل",
