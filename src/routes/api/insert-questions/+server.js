@@ -90,6 +90,7 @@ export const POST = async ({ fetch, request }) => {
         Things not to do:
         1. Do not include the number of a step when following the explanation framework
         2. Do not change the question body, or answers
+        3. Never change which answer is the correct answer, keep the answers exactly as they are in the same order
 
         Follow this JSON structure as shown in the example:
 
