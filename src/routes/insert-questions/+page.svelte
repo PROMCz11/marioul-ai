@@ -144,11 +144,33 @@
     <div class="generated-questions" dir="rtl">
         {#each generatedQuestions as question, index}
             <div>
-                <p class="body bold">{index + 1}. {question.body}</p>
-                {#each question.answers as answer}
-                    <p class:correct={answer.correct}>- {answer.content}</p>
+                <p class="body bold">{index + 1}.</p>
+                <input bind:value={question.body} type="text">
+                {#each question.answers as answer, index}
+                <div>
+                    {#if index === 0}
+                        A
+                    {:else if index === 1}
+                        B
+                    {:else if index === 2}
+                        C
+                    {:else if index === 3}
+                        D
+                    {:else if index === 4}
+                        E
+                    {:else}
+                        X
+                    {/if}
+                    <input bind:value={answer.content} type="text">
+                    <button class:correct={answer.correct} on:click={() => {
+                        question.answers.forEach(a => a.correct = false);
+                        answer.correct = true;
+                        generatedQuestions = generatedQuestions;
+                    }}>{answer.correct ? "صحيح" : "خطأ"}</button>
+                </div>
                 {/each}
-                <p>{question.explanation}</p>
+                الشرح
+                <textarea rows="3" bind:value={question.explanation}></textarea>
             </div>
         {/each}
     </div>
@@ -180,15 +202,26 @@
         gap: 3rem;
     }
 
-    .generated-questions div p:first-of-type {
-        margin-bottom: .5rem;
+    .generated-questions input,
+    .generated-questions textarea {
+        width: 100%;
     }
 
-    .generated-questions div p:last-of-type {
+    .generated-questions > div > input:first-of-type {
+        font-size: 1rem;
+    }
+
+    .generated-questions > div {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .generated-questions > div p:last-of-type {
         margin-top: .5rem;
     }
 
-    p.correct {
+    .correct {
         color: green;
     }
 
