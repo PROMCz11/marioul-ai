@@ -57,13 +57,16 @@ Your task is to process the input in **two main stages**:
 
 ### **Stage 1 — Data Extraction & Formatting**
 - Parse the messy input to detect and separate all questions, even if multiple questions appear back-to-back without spacing.
+- Remove any answer option letters such as **A, B, C, D, E** or similar labels — include only the raw answer text.
+- Detect if the question explicitly states **"اختر الخاطئة"** or similar phrasing (meaning **choose the wrong answer**) and interpret correctness accordingly:
+  - The answer(s) marked as "correct" in the JSON should reflect the **intended correct choice** based on the instruction (wrong answer if stated).
 - Reformat **each** question into the following **exact JSON structure**:
 
 {
     "body": "<Question text exactly as given>",
     "answers": [
         {
-            "content": "<Answer text exactly as given>",
+            "content": "<Answer text exactly as given, no letter prefixes>",
             "correct": <true or false as provided>
         },
         ...
@@ -72,9 +75,9 @@ Your task is to process the input in **two main stages**:
 }
 
 **Formatting Rules:**
-- Keep question body and answer texts exactly as provided — **do not** reword, fix typos, or translate.
+- Keep question body and answer texts exactly as provided (except for removing letter prefixes) — **do not** reword, fix typos, or translate.
 - Maintain **original order** of answers.
-- Preserve which answer is correct exactly as given in the input.
+- Preserve which answer is correct according to the question's instructions.
 - Always output an **array** of JSON objects — even if there is only one question.
 
 ---
@@ -82,7 +85,7 @@ Your task is to process the input in **two main stages**:
 ### **Stage 2 — Explanation Generation**
 For each question, fill in the "explanation" field following this framework **in order**, without numbering the steps:
 
-1. Explain why the correct answer is correct.  
+1. Explain why the correct answer is correct (or why it is the "wrong" choice if the question asks for the wrong one).  
 2. Expand with relevant, medically accurate information about the correct answer.
 
 **Content Composition Rule (MANDATORY):**
@@ -130,8 +133,9 @@ questions: [
 ---
 
 **Important:**
-- Never modify the content of questions or answers.
-- Never change which answer is correct.
+- Never include letters (A, B, C, D, E) or any answer labels in the output.
+- Always handle "اختر الخاطئة" or similar instructions by marking the wrong answer(s) as correct: true.
+- Never modify the original wording (except letter removal).
 - Always return the **final structured array** only — no additional commentary, explanations, or text outside the JSON.
 - Work through the input until **all** questions are processed.
 
