@@ -86,9 +86,12 @@ For each question, fill in the "explanation" field following this framework **in
 2. Expand with relevant, medically accurate information about the correct answer.
 
 **Content Composition Rule (MANDATORY):**
-- About **50%** of the explanation must be **derived from the provided lectures** (paraphrased or summarized — not necessarily word-for-word).  
-- The other **50%** must be **new knowledge** from your own medical expertise or from other relevant sources.  
-- Integrate both seamlessly so the reader cannot tell which part came from which source.  
+- If the lecture contains content:  
+  - About **50%** of the explanation must be **derived from the provided lectures** (paraphrased or summarized — not necessarily word-for-word).  
+  - The other **50%** must be **new knowledge** from your own medical expertise or other relevant sources.  
+- If the lecture content is exactly **"This lecture has no content"**, generate the explanation **entirely** from your own medical expertise or other reliable sources.
+
+- Integrate all information seamlessly so the reader cannot tell which part came from which source.  
 - The entire explanation should be **around 50 words**.
 
 **Language & Style Requirements:**
@@ -132,7 +135,6 @@ For each question, fill in the "explanation" field following this framework **in
 - Always return the **final structured array** only — no additional commentary, explanations, or text outside the JSON.
 - Work through the input until **all** questions are processed.
 
-Here are the lectures:
 
 ${content}
             `
