@@ -101,8 +101,8 @@ For each question, fill in the "explanation" field following this framework **in
 
 ---
 
-### **Output Example:**
-[
+### **Output Example in JSON:**
+questions: [
     {
         "body": "يؤثر التركيب الكيميائي للهرمون في كل ما يلي عدا",
         "answers": [
@@ -134,6 +134,8 @@ For each question, fill in the "explanation" field following this framework **in
 - Never change which answer is correct.
 - Always return the **final structured array** only — no additional commentary, explanations, or text outside the JSON.
 - Work through the input until **all** questions are processed.
+
+Here are the lectures:
 
 
 ${content}
