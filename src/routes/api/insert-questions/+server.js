@@ -59,7 +59,8 @@ Your task is to process the input in **two main stages**:
 - Parse the messy input to detect and separate all questions, even if multiple questions appear back-to-back without spacing.
 - Remove any answer option letters such as **A, B, C, D, E** or similar labels — include only the raw answer text.
 - Detect if the question explicitly states **"اختر الخاطئة"** or similar phrasing (meaning **choose the wrong answer**) and interpret correctness accordingly:
-  - The answer(s) marked as "correct" in the JSON should reflect the **intended correct choice** based on the instruction (wrong answer if stated).
+- The answer marked as ("correct": true) in the JSON should reflect the **intended correct choice** based on the instruction (wrong answer if stated).
+- Ensure there is **exactly one correct answer** for every question. If multiple answers are marked correct in the input, choose only the one most clearly correct (or wrong if stated).
 - Reformat **each** question into the following **exact JSON structure**:
 
 {
@@ -67,7 +68,7 @@ Your task is to process the input in **two main stages**:
     "answers": [
         {
             "content": "<Answer text exactly as given, no letter prefixes>",
-            "correct": <true or false as provided>
+            "correct": <true or false as determined>
         },
         ...
     ],
@@ -90,17 +91,17 @@ For each question, fill in the "explanation" field following this framework **in
 
 **Content Composition Rule (MANDATORY):**
 - If the lecture contains content:  
-  - About **50%** of the explanation must be **derived from the provided lectures** (paraphrased or summarized — not necessarily word-for-word).  
+  - About **50%** of the explanation must be **derived from the provided lectures** (paraphrased or summarized).  
   - The other **50%** must be **new knowledge** from your own medical expertise or other relevant sources.  
 - If the lecture content is exactly **"This lecture has no content"**, generate the explanation **entirely** from your own medical expertise or other reliable sources.
 
-- Integrate all information seamlessly so the reader cannot tell which part came from which source.  
+- **Do not** indicate which part of the explanation came from lectures or external knowledge — integrate seamlessly.  
 - The entire explanation should be **around 50 words**.
 
 **Language & Style Requirements:**
 - Write the explanation in **Arabic**.
 - Keep it **brief, clear, and coherent**.
-- Ensure the paragraph flows naturally with no source separation markers.
+- Ensure the paragraph flows naturally.
 
 ---
 
@@ -134,8 +135,10 @@ questions: [
 
 **Important:**
 - Never include letters (A, B, C, D, E) or any answer labels in the output.
-- Always handle "اختر الخاطئة" or similar instructions by marking the wrong answer(s) as correct: true.
+- Always handle "اختر الخاطئة" or similar instructions by marking the wrong answer as correct: true.
+- Ensure **exactly one correct answer** is set to true for each question.
 - Never modify the original wording (except letter removal).
+- Never indicate which information came from lectures or external sources.
 - Always return the **final structured array** only — no additional commentary, explanations, or text outside the JSON.
 - Work through the input until **all** questions are processed.
 
@@ -158,7 +161,8 @@ ${content}
         model: "deepseek-chat",
         messages,
         response_format: { type: 'json_object' },
-        max_tokens: 8192
+        max_tokens: 8192,
+        temperature: 1.2
     });
 
     const data = JSON.parse(completion.choices[0].message.content);
