@@ -275,6 +275,54 @@
             }
         }
     };
+    
+    // Function to regenerate explanation for a question
+    const regenerateExplanation = async (batchId, questionIndex) => {
+        const batch = batches.find(b => b.id === batchId);
+        if (!batch) return;
+        
+        const question = batch.generatedQuestions[questionIndex];
+        if (!question) return;
+        
+        if (!systemPassword) {
+            alert("Enter a valid system password");
+            return;
+        }
+        
+        // Get lecture ID from the batch's questions (assuming all questions in a batch use the same lecture)
+        const lectureID = question.lectures?.[0];
+        if (!lectureID) {
+            alert("No lecture ID found for this question");
+            return;
+        }
+        
+        try {
+            question.isRegenerating = true;
+            const res = await fetch('/api/insert-questions/explanation', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    question,
+                    lectureID,
+                    systemPassword
+                })
+            });
+            
+            const json = await res.json();
+            console.log(json);
+            
+            if (json?.success) {
+                question.explanation = json.explanation;
+            } else {
+                alert(json?.message || "Failed to regenerate explanation");
+            }
+        } catch (err) {
+            console.log(err.message);
+            alert("Error regenerating explanation");
+        } finally {
+            question.isRegenerating = false;
+        }
+    };
 </script>
 
 <main>
@@ -418,8 +466,22 @@
                                         </button>
                                         
                                         <div class="explanation-section">
-                                            <p>الشرح</p>
-                                            <textarea rows="3" bind:value={question.explanation} placeholder="Explanation..."></textarea>
+                                            <div class="explanation-header">
+                                                <p>الشرح</p>
+                                                <button 
+                                                    on:click={() => regenerateExplanation(batch.id, index)}
+                                                    class="regenerate-btn"
+                                                    disabled={question.isRegenerating}
+                                                >
+                                                    {question.isRegenerating ? 'Regenerating...' : 'Regenerate'}
+                                                </button>
+                                            </div>
+                                            <textarea 
+                                                rows="3" 
+                                                bind:value={question.explanation} 
+                                                placeholder="Explanation..."
+                                                class="explanation-textarea"
+                                            ></textarea>
                                         </div>
                                     </div>
                                     
@@ -618,10 +680,41 @@
 
     .explanation-section {
         margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
-    .explanation-section p {
-        margin: 0.5rem 0 0.2rem 0;
+    .explanation-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .explanation-header p {
+        margin: 0;
+    }
+
+    .regenerate-btn {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8rem;
+        background-color: #55550033;
+        color: #ffff00;
+    }
+
+    .regenerate-btn:hover:not(:disabled) {
+        background-color: #ffff00;
+        color: black;
+    }
+
+    .regenerate-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .explanation-textarea {
+        width: 100%;
+        resize: vertical;
     }
 
     .add-question-btn {
